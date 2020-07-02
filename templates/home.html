@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SentiMentor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		 <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <style>
+            body {
+			  background-image: url("{% static '2.jpg' %}");
+			  background-size: cover;
+			  
+			
+			}
+			</style>
+			<link rel="shortcut icon"  href="{% static '3.jpg' %}" type="image/x-icon" />
+    </head>
+    <body class="is-preload">
+	
+			<header id="header">
+				<h1>SentiMentor</h1>
+				<p>Every Sentiment you need to know.</p>
+			</header>
+			{% block content %}
+			<form id="signup-form" action="tag">
+				{% csrf_token %}
+				<input type="text" name="search" id="email" placeholder="Enter a #hashtag, Keyword" />
+				
+				<input type="submit" value="Search" />
+			</form>
+			{% endblock %}
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label"></span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					
+				</ul>
+				<ul class="copyright">
+					<li>&copy; SentiMentor</li>
+				</ul>
+			</footer>
+
+	</body>
+</html>
